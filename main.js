@@ -154,10 +154,12 @@ function filterAndRender() {
 }
 
 // ----------------- Search -----------------
-function searchDish(text) {
-  searchQuery = text.toLowerCase().trim();
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", (e) => {
+  searchQuery = e.target.value.toLowerCase().trim();
   filterAndRender();
-}
+});
 
 // ----------------- Default Render -----------------
 document.getElementById("hot-dish").classList.add("active");
